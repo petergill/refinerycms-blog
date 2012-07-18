@@ -18,8 +18,8 @@ module Refinery
 
       def expire_cache_for(record)
         # TODO: Convert these to url helpers
-        expire_page '/blog'
-        expire_page '/blog/feed.rss'
+        expire_page '/award_winners'
+        expire_page '/award_winners/feed.rss'
       end
 
   end

@@ -1,5 +1,6 @@
 Refinery::Core::Engine.routes.draw do
-  namespace :blog do
+  
+  namespace :blog, :path => :award_winners do
     root :to => "posts#index"
     resources :posts, :only => [:show]
 
@@ -8,6 +9,7 @@ Refinery::Core::Engine.routes.draw do
     match ':id/comments', :to => 'posts#comment', :as => 'comments'
     get 'archive/:year(/:month)', :to => 'posts#archive', :as => 'archive_posts'
     get 'tagged/:tag_id(/:tag_name)' => 'posts#tagged', :as => 'tagged_posts'
+    get 'award_winner/:user_id(/:user_title)' => 'posts#award_winners', :as => 'award_winner_posts'
   end
 
   namespace :blog, :path => '' do
